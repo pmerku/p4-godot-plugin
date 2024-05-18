@@ -22,7 +22,11 @@ The plugin listens to the signal `apply_changes` [docs](https://docs.godotengine
 
 - Add to your project root a file named `reconcile.bat` with this content:
     ```
+    @echo off
+
+    pushd %~dp0
     p4 reconcile -m
+    popd
     ```
 
 ### TODO

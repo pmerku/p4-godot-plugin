@@ -1,10 +1,10 @@
 @tool
 class_name p4d extends EditorPlugin
 
-const main_panel: PackedScene = preload("res://addons/p4_plugin/p4d.tscn");
+const main_panel: PackedScene = preload("res://addons/p4_plugin/view/p4view.tscn");
 
-const main_panel_name: String = "P4Plugin";
-#const main_panel_icon: Texture2D = preload("res://icon.svg"); # TODO icon
+const main_panel_name: String = "Perforce";
+const main_panel_icon: Texture2D = preload("res://addons/p4_plugin/assets/perforce-icon.svg");
 
 var main_panel_instance: Control;
 
@@ -38,20 +38,8 @@ func _get_plugin_name() -> String:
 
 func _get_plugin_icon() -> Texture2D:
 	# must return a texture for the icon
-	#return main_panel_icon;
-	
-	return get_editor_interface().get_base_control().get_theme_icon("Node", "EditorIcons");
+	return main_panel_icon;
 
 
 func _apply_changes() -> void:
-	var path: String = OS.get_executable_path();
-	path = path.get_base_dir() + "/../../"; # TODO this should be setup in the plugin viewport :)
-	
-	var filename: String = "reconcile.bat";
-	
-	var output = [];
-	var exit_code = OS.execute("cmd.exe", ["/c", path + filename], output);
-	
-	if exit_code != 0:
-		print("Failed to run command!\n");
-		print(output);
+	main_panel_instance.on_btn_reconcile_pressed();

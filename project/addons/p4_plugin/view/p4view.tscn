@@ -1,0 +1,95 @@
+[gd_scene load_steps=3 format=3 uid="uid://gkig5fr4bx4h"]
+
+[ext_resource type="Script" path="res://addons/p4_plugin/view/p4view.gd" id="1_51qor"]
+[ext_resource type="PackedScene" uid="uid://douhya4skk1lh" path="res://addons/p4_plugin/view/p4form.tscn" id="2_4r4cp"]
+
+[node name="main_view" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_51qor")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 467.0
+offset_bottom = 502.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "OPTIONS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Btn_VCSMetadata" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Generates the .p4ignore file"
+text = "Generate VCS Metadata"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Btn_VCSConfig" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Generates the .p4config file"
+text = "Generate VCS Config"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Btn_Save" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Saves the plugin state into `user://p4plugin.cfg`"
+text = "Save"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Btn_ReloadSave" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "Loads the plugin state from `user://p4plugin.cfg`"
+text = "Reload"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Btn_Reconcile" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+tooltip_text = "run `p4 reconcile` command"
+text = "p4 reconcile"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 110
+
+[node name="Form_RootPath" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_4r4cp")]
+layout_mode = 2
+
+[node name="Form_Port" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_4r4cp")]
+layout_mode = 2
+
+[node name="Form_Client" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_4r4cp")]
+layout_mode = 2
+
+[node name="Form_Ignore" parent="MarginContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_4r4cp")]
+layout_mode = 2

@@ -14,10 +14,6 @@ config/name="p4-godot-plugin"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
-[autoload]
-
-P4Plugin="*res://addons/p4_plugin/p4plugin.gd"
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/p4_plugin/plugin.cfg")

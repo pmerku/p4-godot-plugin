@@ -1,0 +1,19 @@
+# P4
+.p4config
+
+# Git
+.git/
+# Godot 4+
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+*.tmp
+
+# Imported translations (automatically generated from CSV files)
+*.translations
+
+# Mono
+.mono/
+data_*/
+mono_crash.*.json

@@ -1,8 +1,11 @@
-######## VS
+# VS
 .vscode/
 .vs/
 
-######## GODOT
+# P4
+.p4config 
+
+# GODOT
 .godot/
 .import/
 export.cfg
@@ -12,7 +15,7 @@ export_presets.cfg
 # Imported translations (automatically generated from CSV files)
 *.translation
 
-######## MONO
+# MONO
 .mono/
 data_*/
 mono_crash.*.json
